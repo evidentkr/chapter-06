@@ -19,24 +19,23 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	public void insertBoard(Board board) {
-		//boardRepo.save(board);
+		boardRepo.save(board);
 	}
 
 	public Board getBoard(Board board) {
-		//return boardRepo.findById(board.getSeq()).get();
-		return null;
+		return boardRepo.findById(board.getSeq()).get();
 	}
 
 	public void updateBoard(Board board) {
-//		Board findBoard = boardRepo.findById(board.getSeq()).get();
-//
-//		findBoard.setTitle(board.getTitle());
-//		findBoard.setContent(board.getContent());
-//		boardRepo.save(findBoard);
+		Board findBoard = boardRepo.findById(board.getSeq()).get();
+
+		findBoard.setTitle(board.getTitle());
+		findBoard.setContent(board.getContent());
+		boardRepo.save(findBoard);
 	}
 
 	public void deleteBoard(Board board) {
-//		boardRepo.deleteById(board.getSeq());
+		boardRepo.deleteById(board.getSeq());
 	}
 
 }
